@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@notionhq/client": "^2.2.8",
+    "@tailwindcss/forms": "^0.5.4",
     "@types/node": "20.4.3",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
@@ -19,6 +21,7 @@
     "eslint-config-next": "13.4.12",
     "keen-slider": "^6.8.6",
     "next": "13.4.12",
+    "notion-client": "^6.16.0",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
