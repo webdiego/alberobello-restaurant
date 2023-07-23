@@ -1,7 +1,7 @@
 import React from 'react'
 import { Client } from '@notionhq/client'
 import Image from 'next/image'
-
+import Navbar from '../components/Navbar'
 import { Pacifico } from 'next/font/google'
 const pacifico = Pacifico({ weight: '400', subsets: ['latin'] })
 let notionDatabaseId = process.env.NOTION_DATABASE_ID
@@ -33,82 +33,77 @@ export default function menu({ menu }: { menu: any }) {
   }
 
   return (
-    <div>
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl py-24 sm:px-6  lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16 backdrop-blur-2xl	">
-            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
-              Il nostro menù
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-800">
-              Il nostro menù è ricco di piatti tipici della tradizione pugliese,
-              troverai antipasti, primi, secondi, pizze e molto altro ancora.
-            </p>
-            <div className="absolute left-0 top-0 -z-10 w-full h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1598860287658-357cb49e228b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
-                alt="logo"
-                fill
-                objectFit="cover"
-                objectPosition="center"
-                className="grayscale blur-sm"
-              />
-              <div className="bg-white w-full h-full"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto py-10 px-6 lg:px-8">
-        <div className="sm:hidden">
-          <select
-            id="tabs"
-            name="tabs"
-            className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-            defaultValue={tabs.find((tab) => tab.current)!.name}
-            onChange={(event) => handleSelectTab(event.target.value)}
-          >
-            {tabs.map((tab) => (
-              <option key={tab.name}>{tab.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className="hidden sm:block">
-          <nav
-            className="flex space-x-4 w-full overflow-x-auto items-center pb-4"
-            aria-label="Tabs"
-          >
-            {tabs.map((tab) => (
-              <div
-                key={tab.name}
-                className={classNames(
-                  tab.current
-                    ? 'bg-black text-white'
-                    : 'text-gray-500 hover:text-gray-700',
-                  'rounded-md px-3 py-2 text-sm font-medium cursor-pointer min-w-max'
-                )}
-                // set the current tab to true on click to change the active tab style to "bg-black text-white"
-                onClick={() => handleSelectTab(tab.name)}
-                aria-current={tab.current ? 'page' : undefined}
-              >
-                {tab.name}
+    <>
+      <Navbar />
+      <div className="py-10">
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl py-14 px-6 lg:px-8">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 p py-16 md:py-24 text-center shadow-2xl rounded-3xl sm:px-16 backdrop-blur-2xl	">
+              <h2 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-lg	">
+                Il nostro menù
+              </h2>
+              <p className="mx-auto mt-6 max-w-xl text-base md:text-lg  text-white drop-shadow-lg	">
+                Il nostro menù è ricco di piatti tipici della tradizione
+                pugliese, troverai antipasti, primi, secondi, pizze e molto
+                altro ancora.
+              </p>
+              <div className="absolute left-0 top-0 -z-10 w-full h-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1510382160188-0990ce845b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                  alt="logo"
+                  fill
+                  objectFit="cover"
+                  objectPosition="center"
+                  className="grayscale blur-sm"
+                />
+                <div className="bg-white w-full h-full" />
               </div>
-            ))}
-          </nav>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto py-5 px-6 lg:px-8">
+          <div className="relative">
+            <nav
+              className="flex space-x-4 w-full overflow-x-auto items-center pb-4 pr-10"
+              aria-label="Tabs"
+            >
+              {tabs.map((tab, i) => (
+                <div
+                  key={i}
+                  className={classNames(
+                    tab.current
+                      ? 'bg-black text-white'
+                      : 'text-gray-500 hover:text-gray-700',
+                    'rounded-md px-3 py-2 text-sm font-medium cursor-pointer min-w-max'
+                  )}
+                  // set the current tab to true on click to change the active tab style to "bg-black text-white"
+                  onClick={() => handleSelectTab(tab.name)}
+                  aria-current={tab.current ? 'page' : undefined}
+                >
+                  {tab.name}
+                </div>
+              ))}
+              <div className="absolute right-0 top-0 w-14 h-full bg-gradient-to-r from-transparent to-white" />
+            </nav>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-5">
+          {menu[tabs.find((tab) => tab.current)!.name].map(
+            (item: any, i: number) => (
+              <div key={i} className={`flex justify-between py-2`}>
+                <div className="w-2/3">
+                  <h2 className="text-sm md:text-base font-medium">
+                    {item.title}
+                  </h2>
+                  <p className="italic">{item.description}</p>
+                </div>
+                <p>€ {item.price}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {menu[tabs.find((tab) => tab.current)!.name].map((item: any) => (
-          <div className={`flex justify-between py-2`}>
-            <div className="w-2/3">
-              <h2 className="text-sm md:text-base font-medium">{item.title}</h2>
-              <p className="italic">{item.description}</p>
-            </div>
-            <p>€ {item.price}</p>
-          </div>
-        ))}
-      </div>
-      {/* <pre>{JSON.stringify(menu, null, 2)}</pre> */}
-    </div>
+    </>
   )
 }
 

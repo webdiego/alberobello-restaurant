@@ -2,10 +2,13 @@ import { AtSymbolIcon, PhoneIcon } from '@heroicons/react/24/solid'
 
 export default function Contact() {
   return (
-    <div className="bg-white mt-32 px-6">
+    <div className="bg-white mt-28 px-6">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 bg-slate-200/50 py-24 sm:py-32 rounded-xl">
         <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+          <div
+            className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3"
+            id="contatti"
+          >
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Contatti

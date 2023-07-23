@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Map() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-32">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-28">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Dove siamo

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Pacifico } from 'next/font/google'
+import Link from 'next/link'
 const pacifico = Pacifico({ weight: '400', subsets: ['latin'] })
 
 export default function Example() {
@@ -23,18 +24,18 @@ export default function Example() {
                 e ricchi di sapore.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <a
-                  href="#"
+                <Link
+                  href="/menu"
                   className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Scopri il menù
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/#contatti"
                   className="rounded-md border-2 border-gray-200 bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-slate-00 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                 >
                   Contatti
-                </a>
+                </Link>
               </div>
             </div>
             <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
