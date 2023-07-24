@@ -13,7 +13,7 @@ const notion = new Client({
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
-export default function menu({ menu }: { menu: any }) {
+export default function Menu({ menu }: { menu: any }) {
   let tabsMenu = Object.keys(menu).map((key) => {
     return {
       name: key,
