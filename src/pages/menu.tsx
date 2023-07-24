@@ -1,7 +1,7 @@
 import React from 'react'
 import { Client } from '@notionhq/client'
 import Image from 'next/image'
-import Navbar from '../components/Navbar'
+import Layout from '../components/Layout'
 import { Pacifico } from 'next/font/google'
 const pacifico = Pacifico({ weight: '400', subsets: ['latin'] })
 let notionDatabaseId = process.env.NOTION_DATABASE_ID
@@ -33,16 +33,15 @@ export default function menu({ menu }: { menu: any }) {
   }
 
   return (
-    <>
-      <Navbar />
-      <div className="py-10">
+    <Layout>
+      <div className="pb-10">
         <div className="bg-white">
           <div className="mx-auto max-w-7xl py-14 px-6 lg:px-8">
-            <div className="relative isolate overflow-hidden bg-gray-900 px-6 p py-16 md:py-24 text-center shadow-2xl rounded-3xl sm:px-16 backdrop-blur-2xl	">
-              <h2 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-lg	">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 p py-16 md:py-24 text-left shadow-2xl rounded-3xl sm:px-16 backdrop-blur-2xl	">
+              <h2 className="mr-auto max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-lg	">
                 Il nostro menù
               </h2>
-              <p className="mx-auto mt-6 max-w-xl text-base md:text-lg  text-white drop-shadow-lg	">
+              <p className="mr-auto mt-6 max-w-xl text-base md:text-lg  text-white drop-shadow-lg	">
                 Il nostro menù è ricco di piatti tipici della tradizione
                 pugliese, troverai antipasti, primi, secondi, pizze e molto
                 altro ancora.
@@ -54,7 +53,7 @@ export default function menu({ menu }: { menu: any }) {
                   fill
                   objectFit="cover"
                   objectPosition="center"
-                  className="grayscale blur-sm"
+                  className="blur-sm"
                 />
                 <div className="bg-white w-full h-full" />
               </div>
@@ -90,12 +89,12 @@ export default function menu({ menu }: { menu: any }) {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-5">
           {menu[tabs.find((tab) => tab.current)!.name].map(
             (item: any, i: number) => (
-              <div key={i} className={`flex justify-between py-2`}>
+              <div key={i} className={`flex justify-between items-center py-2`}>
                 <div className="w-2/3">
                   <h2 className="text-sm md:text-base font-medium">
                     {item.title}
                   </h2>
-                  <p className="italic">{item.description}</p>
+                  <p className="italic text-sm">{item.description}</p>
                 </div>
                 <p>€ {item.price}</p>
               </div>
@@ -103,7 +102,7 @@ export default function menu({ menu }: { menu: any }) {
           )}
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 
@@ -114,26 +113,32 @@ export async function getStaticProps() {
   const results = response.results.map((page) => {
     return {
       //@ts-ignore
-      tag: page.properties.Tag.select.name,
+      tag: page.properties.Tag.select?.name ?? null,
       //@ts-ignore
-      title: page.properties.Name.title[0].text.content,
+      title: page.properties.Name.title[0]?.text.content ?? null,
       description:
         //@ts-ignore
         page.properties.Descrizione.rich_text[0]?.text.content ?? null,
       //@ts-ignore
-      price: page.properties.Prezzo.rich_text[0].text.content,
+      price: page.properties.Prezzo.rich_text[0]?.text.content ?? null,
     }
   })
 
   let menu = {
     Antipasti: results.filter((item) => item.tag === 'Antipasti').reverse(),
-    Insalatone: results.filter((item) => item.tag === 'Insalatone'),
-    Primi: results.filter((item) => item.tag === 'Primi'),
-    Secondi: results.filter((item) => item.tag === 'Secondi'),
+    Insalatone: results.filter((item) => item.tag === 'Insalatone').reverse(),
+    Primi: results.filter((item) => item.tag === 'Primi').reverse(),
+    Secondi: results.filter((item) => item.tag === 'Secondi').reverse(),
     Contorni: results.filter((item) => item.tag === 'Contorni'),
-    'Pizze classiche': results.filter((item) => item.tag === 'Pizze classiche'),
-    'Pizze speciali': results.filter((item) => item.tag === 'Pizze speciali'),
-    'Pizze bianche': results.filter((item) => item.tag === 'Pizze bianche'),
+    'Pizze classiche': results
+      .filter((item) => item.tag === 'Pizze classiche')
+      .reverse(),
+    'Pizze speciali': results
+      .filter((item) => item.tag === 'Pizze speciali')
+      .reverse(),
+    'Pizze bianche': results
+      .filter((item) => item.tag === 'Pizze bianche')
+      .reverse(),
   }
   return {
     props: {

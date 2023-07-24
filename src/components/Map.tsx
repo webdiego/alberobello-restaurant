@@ -8,8 +8,8 @@ export default function Map() {
           Dove siamo
         </h2>
         <p className="mt-4 leading-7 text-gray-600">
-          Se desideri prenotare o avere informazioni, contattaci ai seguenti
-          recapiti:
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
+          id?
         </p>
       </div>
       <div className="mt-10">
