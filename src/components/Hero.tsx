@@ -1,9 +1,17 @@
+import { useRef } from 'react'
 import Image from 'next/image'
 import { Pacifico } from 'next/font/google'
 import Link from 'next/link'
 const pacifico = Pacifico({ weight: '400', subsets: ['latin'] })
-import { motion } from 'framer-motion'
-export default function Example() {
+import { motion, inView, useInView } from 'framer-motion'
+export default function Hero() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  let animate = {
+    y: isInView ? '0' : '-10px',
+    opacity: isInView ? 1 : 0,
+  }
   return (
     <div className="bg-white">
       <div className="overflow-hidden">
@@ -38,7 +46,10 @@ export default function Example() {
                 </Link>
               </div>
             </div>
-            <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+            <div
+              ref={ref}
+              className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
+            >
               <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                 <div className="relative">
                   <motion.img
@@ -55,7 +66,7 @@ export default function Example() {
                 <div className="relative">
                   <motion.img
                     initial={{ y: '-10px', opacity: 0 }}
-                    animate={{ y: '0', opacity: 1 }}
+                    animate={animate}
                     transition={{ duration: 1.5, delay: 0.2 }}
                     src="https://images.unsplash.com/photo-1565855307023-a04f63ba6a4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
                     alt=""
@@ -65,7 +76,7 @@ export default function Example() {
                 <div className="relative">
                   <motion.img
                     initial={{ y: '-10px', opacity: 0 }}
-                    animate={{ y: '0', opacity: 1 }}
+                    animate={animate}
                     transition={{ duration: 1.5, delay: 0.4 }}
                     src="https://images.unsplash.com/photo-1642114979822-c130e1db32d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80"
                     alt=""
@@ -77,7 +88,7 @@ export default function Example() {
                 <div className="relative">
                   <motion.img
                     initial={{ y: '-10px', opacity: 0 }}
-                    animate={{ y: '0', opacity: 1 }}
+                    animate={animate}
                     transition={{ duration: 1.5, delay: 0.6 }}
                     src="https://images.unsplash.com/photo-1634469489748-3cb1c5fe4148?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
                     alt=""
@@ -87,7 +98,7 @@ export default function Example() {
                 <div className="relative">
                   <motion.img
                     initial={{ y: '-10px', opacity: 0 }}
-                    animate={{ y: '0', opacity: 1 }}
+                    animate={animate}
                     transition={{ duration: 1.5, delay: 0.8 }}
                     src="https://images.unsplash.com/photo-1571403712587-f99cedc8cf99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80"
                     alt=""
