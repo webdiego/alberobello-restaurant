@@ -89,14 +89,16 @@ export default function Menu({ menu }: { menu: any }) {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-5">
           {menu[tabs.find((tab) => tab.current)!.name].map(
             (item: any, i: number) => (
-              <div key={i} className={`flex justify-between items-center py-2`}>
+              <div key={i} className={`flex justify-between items-start py-2`}>
                 <div className="w-2/3">
                   <h2 className="text-sm md:text-base font-medium">
                     {item.title}
                   </h2>
                   <p className="italic text-sm">{item.description}</p>
                 </div>
-                <p>€ {item.price}</p>
+                <p className="text-sm md:text-base text-right">
+                  € {item.price}
+                </p>
               </div>
             )
           )}
