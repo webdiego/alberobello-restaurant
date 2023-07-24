@@ -82,7 +82,7 @@ export default function Menu({ menu }: { menu: any }) {
                   {tab.name}
                 </div>
               ))}
-              <div className="absolute right-0 top-0 w-14 h-full bg-gradient-to-r from-transparent to-white" />
+              {/* <div className="absolute right-0 top-0 w-14 h-full bg-gradient-to-r from-transparent to-white" /> */}
             </nav>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function Menu({ menu }: { menu: any }) {
             (item: any, i: number) => (
               <div key={i} className={`flex justify-between items-start py-2`}>
                 <div className="w-2/3">
-                  <h2 className="text-sm md:text-base font-medium">
+                  <h2 className="text-sm md:text-base font-medium pr-5">
                     {item.title}
                   </h2>
                   <p className="italic text-sm">{item.description}</p>
