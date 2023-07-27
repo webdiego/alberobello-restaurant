@@ -6,3 +6,7 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
+.img-gallery {
+  @apply aspect-square max-w-[clamp(14rem,28vmin,20rem)] rounded-md object-cover shadow-md;
+}
