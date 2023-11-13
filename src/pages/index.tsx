@@ -3,12 +3,14 @@ import Description from '../components/Description'
 import Map from '../components/Map'
 import Contact from '../components/Contact'
 import Layout from '../components/Layout'
+import WorkingHours from '@/components/WorkingHours'
 export default function Home() {
   return (
     <Layout>
       <Hero />
       <Description />
       <Map />
+      <WorkingHours />
       <Contact />
     </Layout>
   )

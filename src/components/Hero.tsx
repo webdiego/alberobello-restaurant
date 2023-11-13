@@ -26,10 +26,10 @@ export default function Hero() {
               </h1>
               <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                 La Puglia è una regione ricca di storia e di tradizioni, che si
-                riflettono anche nella sua cucina. La cucina pugliese è semplice
-                e genuina, fatta di ingredienti semplici e di stagione, che
-                vengono lavorati con cura e passione per ottenere piatti gustosi
-                e ricchi di sapore.
+                riflettono anche nella sua cucina. <br /> La cucina pugliese è
+                semplice e genuina, fatta di ingredienti semplici e di stagione,
+                che vengono lavorati con cura e passione per ottenere piatti
+                gustosi e ricchi di sapore.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link

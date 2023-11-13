@@ -5,11 +5,10 @@ export default function Map() {
     <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8 mt-28">
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Dove siamo
+          Dove siamo situati
         </h2>
         <p className="mt-4 leading-7 text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-          id?
+          Il nostro ristorante si trova in Via Trento, 117, 20021 Bollate MI
         </p>
       </div>
       <div className="mt-10">

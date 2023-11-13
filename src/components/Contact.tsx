@@ -2,7 +2,7 @@ import { AtSymbolIcon, PhoneIcon } from '@heroicons/react/24/solid'
 
 export default function Contact() {
   return (
-    <div className="bg-white mt-28 px-6">
+    <div className="bg-white mt-20 px-6">
       <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8 bg-slate-200/50 py-16  rounded-xl">
         <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
           <div

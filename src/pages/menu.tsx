@@ -2,10 +2,10 @@ import React from 'react'
 import { Client } from '@notionhq/client'
 import Image from 'next/image'
 import Layout from '../components/Layout'
-import { Pacifico } from 'next/font/google'
-const pacifico = Pacifico({ weight: '400', subsets: ['latin'] })
+
 let notionDatabaseId = process.env.NOTION_DATABASE_ID
 let notionKey = process.env.NOTION_SECRET_KEY
+
 const notion = new Client({
   auth: notionKey,
 })
@@ -20,6 +20,7 @@ export default function Menu({ menu }: { menu: any }) {
       current: false,
     }
   })
+
   tabsMenu[0].current = true
   const [tabs, setTabs] = React.useState(tabsMenu)
 
@@ -37,7 +38,7 @@ export default function Menu({ menu }: { menu: any }) {
       <div className="pb-10">
         <div className="bg-white">
           <div className="mx-auto max-w-7xl py-14 px-6 lg:px-8">
-            <div className="relative isolate overflow-hidden bg-gray-900 px-6 p py-16 md:py-24 text-left shadow-2xl rounded-3xl sm:px-16 backdrop-blur-2xl	">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 p py-16 md:py-24 text-left shadow-2xl rounded-3xl sm:px-16 ">
               <h2 className="mr-auto max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl drop-shadow-lg	">
                 Il nostro menù
               </h2>
@@ -61,7 +62,7 @@ export default function Menu({ menu }: { menu: any }) {
           </div>
         </div>
         <div className="max-w-7xl mx-auto py-5 px-6 lg:px-8">
-          <div className="relative">
+          <div className="relative border-b">
             <nav
               className="flex space-x-4 w-full overflow-x-auto items-center pb-4 pr-10"
               aria-label="Tabs"
@@ -72,7 +73,7 @@ export default function Menu({ menu }: { menu: any }) {
                   className={classNames(
                     tab.current
                       ? 'bg-black text-white'
-                      : 'text-gray-500 hover:text-gray-700',
+                      : 'text-gray-500 hover:text-gray-700 border',
                     'rounded-md px-3 py-2 text-sm font-medium cursor-pointer min-w-max'
                   )}
                   // set the current tab to true on click to change the active tab style to "bg-black text-white"
@@ -110,7 +111,7 @@ export default function Menu({ menu }: { menu: any }) {
 
 export async function getStaticProps() {
   const response = await notion.databases.query({
-    database_id: notionDatabaseId!,
+    database_id: notionDatabaseId as string,
   })
   const results = response.results.map((page) => {
     return {
