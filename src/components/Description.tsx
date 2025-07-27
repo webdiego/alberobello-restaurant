@@ -20,7 +20,7 @@ export default function Example() {
               ambiente accogliente e familiare.
             </p>
           </div>
-          <div className="hidden lg:flex flex-wrap items-start justify-end gap-6 sm:gap-8  ">
+          <div className="hidden lg:contents flex-wrap items-start justify-end gap-6 sm:gap-8  ">
             <div className=" w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <img
                 src="https://images.unsplash.com/photo-1571081538808-612772b00e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
