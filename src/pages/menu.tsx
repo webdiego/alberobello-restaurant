@@ -52,8 +52,9 @@ export default function Menu({ menu }: { menu: any }) {
                   src="https://images.unsplash.com/photo-1510382160188-0990ce845b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                   alt="logo"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   objectPosition="center"
+                  priority
                   className="blur-sm"
                 />
                 <div className="bg-white w-full h-full" />
