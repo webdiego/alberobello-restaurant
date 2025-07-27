@@ -20,16 +20,16 @@ export default function Example() {
               ambiente accogliente e familiare.
             </p>
           </div>
-          <div className="hidden flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents ">
+          <div className="hidden lg:flex flex-wrap items-start justify-end gap-6 sm:gap-8  ">
             <div className=" w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <img
                 src="https://images.unsplash.com/photo-1571081538808-612772b00e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-                alt=""
+                alt="Burrata"
                 className="hidden lg:block aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover object-left"
               />
               <img
-                src="https://images.unsplash.com/photo-1599462620592-8e17c48eed70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=100"
-                alt=""
+                src="https://images.unsplash.com/photo-1571081538808-612772b00e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt="Pizza"
                 className="lg:hidden aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover object-left"
               />
             </div>
@@ -37,21 +37,21 @@ export default function Example() {
               <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                 <img
                   src="https://static.gamberorosso.it/2021/04/orecchiette-con-le-cime-di-rapa.jpg"
-                  alt=""
+                  alt="Orecchiette con le cime di rapa"
                   className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
               <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                 <img
                   src="https://plus.unsplash.com/premium_photo-1669261880961-ea68f9a2b7f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt=""
+                  alt="Polpo alla griglia"
                   className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-fill"
                 />
               </div>
-              <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+              <div className="border-2 hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                 <img
-                  src="https://blog.giallozafferano.it/sayummy/wp-content/uploads/2014/10/04-ottobre-2014-04-50-11-DSC_4138.jpg"
-                  alt=""
+                  src="https://images.unsplash.com/photo-1622880833523-7cf1c0bd4296?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Pizza"
                   className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
