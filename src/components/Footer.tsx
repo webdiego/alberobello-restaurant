@@ -16,7 +16,7 @@ const navigation = [
   },
   {
     name: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/alberobello_ristorante/',
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
